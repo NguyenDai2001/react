@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
-
+import TodoList from "./component/TodoList";
+import Textfield from '@atlaskit/textfield'
+import Button from "@atlaskit/button";
+import { useState } from "react";
 function App() {
+  const [todolist, settodolist]=useState([]);
+  const [textinput, settextinput]=useState('');
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <h3> danh sachs</h3>
+      <Textfield name="add-tode" placeholder="Them viec lam"
+        elemAfterInput={
+          <Button isDisabled={true} appearance="primary" >Theem </Button>
+        
+        }
+        style={{padding:"10px 20px 30px 50px"}}
+      ></Textfield>
+      <TodoList></TodoList>
+
+    </>
+     )
 }
 
 export default App;
